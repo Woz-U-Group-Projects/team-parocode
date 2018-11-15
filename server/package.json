@@ -1,5 +1,5 @@
 {
-  "name": "team-parocode-test",
+  "name": "team-parocode",
   "version": "1.0.0",
   "description": "User Registration using MongoDB, Express, Angular, Node",
   "main": "app.js",
