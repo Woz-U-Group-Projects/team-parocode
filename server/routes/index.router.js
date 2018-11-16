@@ -7,6 +7,6 @@ router.get('/signup', (req, res) => {
     res.send('Testing')
 });
 
-router.post('/signup', ctrlUser.register);
+router.post('/signup', ctrlUser.signup);
 
 module.exports = router;
