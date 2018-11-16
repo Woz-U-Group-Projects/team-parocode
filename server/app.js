@@ -13,9 +13,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', rtsIndex);
-app.use('/*', (req, res) => {
-    res.sendFile('../Angular6/src/index.html');
-});
 
 
 //error handler
