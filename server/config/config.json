@@ -1,7 +1,7 @@
 {
     "development": {
         "PORT": 3001,
-        "MONGODB_URI": "mongodb://localhost:27017/MEANStackDB"
+        "MONGODB_URI": "mongodb://<username>:<password>@ds163176.mlab.com:63176/team-parocode-db"
     },
     "production": {
         "PORT": 80,
