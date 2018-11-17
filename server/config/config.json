@@ -1,0 +1,10 @@
+{
+    "development": {
+        "PORT": 3001,
+        "MONGODB_URI": "mongodb://Robert.campbell509:Fucku78952@ds163176.mlab.com:63176/team-parocode-db"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name"
+    }
+}
