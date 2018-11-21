@@ -3,10 +3,10 @@ const router = express.Router();
 
 const ctrlUser = require('../controllers/user.controller');
 
-router.get('/signup', (req, res) => {
-    res.send('Testing')
-});
+const jwtHelper = require('../config/jwtHelper');
 
 router.post('/signup', ctrlUser.signup);
+router.post('/authenticate', ctrlUser.authenticate);
+router.get ('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
 module.exports = router;
