@@ -20,4 +20,11 @@ export class UserService {
   postUser(user: User) {
     return this.http.post(environment.apiBaseUrl+ '/signup',user);
   }
+
+  login(authCredentials) {
+    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
+  }
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+  }
 }
