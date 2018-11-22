@@ -15,16 +15,49 @@ export class UserService {
     password: ''
   };
 
+  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'true'}) };
+
   constructor(private http: HttpClient) { }
 
+//http Methods
+
   postUser(user: User) {
-    return this.http.post(environment.apiBaseUrl+ '/signup',user);
+    return this.http.post(environment.apiBaseUrl+ '/signup',user, this.noAuthHeader);
   }
 
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
+    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
+  getUserProfile() {
+    return this.http.get(environment.apiBaseUrl + '/userProfile');
+  }
+
+  //helper Methods
+
   setToken(token: string) {
     localStorage.setItem('token', token);
+  }
+  getToken() {
+    return localStorage.getItem('token');
+  }
+  deleteToken() {
+    localStorage.removeItem('token');
+  }
+  getUserPayload() {
+    var token = this.getToken();
+    if (token) {
+      var userPayload = atob(token.split('.')[1]);
+      return JSON.parse(userPayload);
+    }
+    else
+      return null;
+  }
+
+  isLoggedIn() {
+    var userPayload = this.getUserPayload();
+    if (userPayload)
+      return userPayload.exp > Date.now() / 1000;
+    else
+      return false;
   }
 }

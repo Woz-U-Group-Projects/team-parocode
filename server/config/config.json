@@ -3,7 +3,7 @@
         "PORT": 3001,
         "MONGODB_URI": "mongodb://Robert.campbell509:Fucku78952@ds163176.mlab.com:63176/team-parocode-db",
         "JWT_SECRET": "SECRET#123",
-        "JWT_EXP": "2m"
+        "JWT_EXP": "10m"
     },
     "production": {
         "PORT": 80,

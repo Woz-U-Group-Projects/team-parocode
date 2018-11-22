@@ -42,7 +42,7 @@ module.exports.userProfile = (req, res, next) => {
             if (!user)
                 return res.status(404).json({ status: false, message: "Unauthorized access." });
             else
-                return res.status(200).json({ status: true, user : _.pick(user,['firstName','email']) });
+                return res.status(200).json({ status: true, user : _.pick(user,['firstName','lastName','email']) });
         }
     );
 }

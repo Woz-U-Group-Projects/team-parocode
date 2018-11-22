@@ -310,7 +310,7 @@ label.validation-message{
 }
  
 th {
-  color:#D5DDE5;;
+  color:#c2c2c2;;
   background:#1b1e24;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
@@ -349,7 +349,7 @@ tr:last-child {
 }
  
 tr:nth-child(odd) td {
-  background:#EBEBEB;
+  background:rgba(235, 235, 235, 0);
 }
 
 tr:last-child td:first-child {
