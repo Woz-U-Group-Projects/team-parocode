@@ -11,11 +11,14 @@ const rtsIndex = require('./routes/index.router');
 
 var app = express();
 
+var postController = require('./controllers/postController.js');
+
 //middleware
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
+app.use('/userDashboard', postController);
 
 
 //error handler

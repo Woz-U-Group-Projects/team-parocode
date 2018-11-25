@@ -3,18 +3,18 @@ import { UserService } from '../shared/user.service';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: 'app-user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.css']
 })
-export class UserProfileComponent implements OnInit {
+export class UserDashboardComponent implements OnInit {
 
   userDetails;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.userService.getUserProfile().subscribe(
+    this.userService.getUserDashboard().subscribe(
       res => {
         this.userDetails = res['user'];
       },

@@ -28,8 +28,8 @@ export class UserService {
   login(authCredentials) {
     return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
-  getUserProfile() {
-    return this.http.get(environment.apiBaseUrl + '/userProfile');
+  getUserDashboard() {
+    return this.http.get(environment.apiBaseUrl + '/userDashboard');
   }
 
   //helper Methods

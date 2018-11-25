@@ -36,7 +36,7 @@ module.exports.authenticate = (req, res, next) => {
     })(req, res);
 }
 
-module.exports.userProfile = (req, res, next) => {
+module.exports.userDashboard = (req, res, next) => {
     User.findOne({ _id: req._id },
         (err, user) => {
             if (!user)
