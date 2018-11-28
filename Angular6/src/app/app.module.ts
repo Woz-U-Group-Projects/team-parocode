@@ -13,9 +13,11 @@ import { appRoutes } from './routes';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
+import { PostComponent } from './post/post.component';
 //other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     UserComponent,
     SignUpComponent,
     UserDashboardComponent,
-    SignInComponent
+    SignInComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

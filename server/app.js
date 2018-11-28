@@ -15,10 +15,10 @@ var postController = require('./controllers/postController.js');
 
 //middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
-app.use('/userDashboard', postController);
+app.use('/api', postController);
 
 
 //error handler
