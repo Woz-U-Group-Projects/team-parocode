@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var Post = mongoose.model('Post', {
+const postSchema = new mongoose.Schema({
     title: {
         type: String
     },
     body: {
         type: String
-    }
+    },
+    user: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-//post.associate = function(models) {
-//    post.hasMany(models.users,{
-//        foreignKey:'_id'
-//    });
-//};
-module.exports = { Post };
+module.exports = mongoose.model('Post', postSchema)

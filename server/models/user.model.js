@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Schema = mongoose.Schema;
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: 'First Name can not be empty'
@@ -18,10 +19,10 @@ var userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: 'Password can\'t be empty',
+        required: 'Password can not be empty',
         minlength : [6, 'Password must be atleast 6 characters long']
     },
-    saltSecret: String
+    saltSecret: String,
 });
 
 //Custom validation for email
@@ -54,4 +55,4 @@ userSchema.methods.generateJwt = function () {
     });
 }
 
-mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
