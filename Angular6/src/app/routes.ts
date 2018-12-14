@@ -18,7 +18,7 @@ export const appRoutes: Routes = [
         path: 'userDashboard', component: UserDashboardComponent, canActivate:[AuthGuard]
     },
     {
-        path: '', redirectTo: '/login', pathMatch: 'full'
+        path: '', redirectTo: '/signup', pathMatch: 'full'
     }
 ];
 

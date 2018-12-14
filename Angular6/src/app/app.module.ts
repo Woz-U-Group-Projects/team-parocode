@@ -17,7 +17,11 @@ import { PostComponent } from './post/post.component';
 //other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
-
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
+import { BannerComponent } from './banner/banner.component';
+import { HeaderComponent } from './header/header.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -27,19 +31,25 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     SignUpComponent,
     UserDashboardComponent,
     SignInComponent,
-    PostComponent
+    PostComponent,
+    BannerComponent,
+    HeaderComponent,
+    TeamComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MDBBootstrapModulesPro.forRoot()
   ],
-  providers: [{
+  providers: [
+    MDBSpinningPreloader,
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },UserService, AuthGuard],
+  }, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
