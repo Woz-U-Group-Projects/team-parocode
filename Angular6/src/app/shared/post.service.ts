@@ -16,14 +16,14 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   postPost(post: Post) {
-    return this.http.post(environment.apiBaseUrl + '/posts', post)
+    return this.http.post(environment.apiBaseUrl + '/posts', post);
   }
 
   getPostList() {
-    return this.http.get(environment.apiBaseUrl+ '/posts');
+    return this.http.get(environment.apiBaseUrl + '/posts');
   }
 
-  putPost(post : Post) {
+  putPost(post: Post) {
     return this.http.put(environment.apiBaseUrl + '/posts/' + `${post._id}`, post);
   }
 

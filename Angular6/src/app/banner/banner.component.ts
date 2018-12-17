@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms'
+import { UserComponent} from '../user/user.component';
 
 @Component({
   selector: 'app-banner',

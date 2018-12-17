@@ -1,3 +1,69 @@
-<app-header></app-header>
-<app-banner></app-banner>
-<app-team></app-team>
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
+
+        <!-- Tab panels -->
+        <mdb-tabset #staticTabs [buttonClass]="'nav md-tabs tabs-2 light-blue darken-3'" [contentClass]="''"
+                    class="tab-content">
+          <!--Panel 7-->
+          <mdb-tab class="tab-pane fade in show active" id="panel7" role="tabpanel" heading="<i class='fa fa-user mr-1'></i> Login">
+
+            <!--Body-->
+            <div class="modal-body mb-1">
+              <app-sign-in></app-sign-in>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer display-footer">
+              <div class="options text-center text-md-right mt-1">
+                <p>Not a member?
+                  <a href="#" class="blue-text">Sign Up</a>
+                </p>
+                <p>Forgot
+                  <a href="#" class="blue-text">Password?</a>
+                </p>
+              </div>
+              <button type="button" mdbBtn color="info" outline="true" class="ml-auto" data-dismiss="modal"
+                      (click)="frame.hide()" mdbWavesEffect>Close</button>
+            </div>
+
+          </mdb-tab>
+
+
+
+          <!--/.Panel 7-->
+
+          <!--Panel 8-->
+          <mdb-tab class="tab-pane fade" id="panel8" role="tabpanel" heading="<i class='fa fa-user-plus mr-1'></i> Register">
+
+            <!--Body-->
+            <div class="modal-body">
+
+              <app-sign-up></app-sign-up>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <div class="options text-right">
+                <p class="pt-1">Already have an account?
+                  <a href="#" class="blue-text">Log In</a>
+                </p>
+              </div>
+              <button type="button" mdbBtn color="info" outline="true" class="ml-auto" data-dismiss="modal"
+                      (click)="frame.hide()" mdbWavesEffect>Close</button>
+            </div>
+          </mdb-tab>
+          <!--/.Panel 8-->
+        </mdb-tabset>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<button type="button" mdbBtn gradient="peach" rounded="true" data-toggle="modal" data-target="#basicExample"
+        (click)="frame.show()" mdbWavesEffect>Sign In / Sign Up</button>

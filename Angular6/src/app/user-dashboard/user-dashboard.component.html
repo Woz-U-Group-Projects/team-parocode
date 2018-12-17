@@ -1,27 +1,33 @@
-<table *ngIf="userDetails" class=" table-fill">
-  <thead>
-    <tr>
-      <th colspan="2" class="text-center">Dashboard</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>First Name</td>
-      <td>{{ userDetails.firstName }}</td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td>{{ userDetails.lastName }}</td>
-    </tr>
-    <tr>
-      <td>E-Mail</td>
-      <td>{{ userDetails.email }}</td>
-    </tr>
-    <tr>
-      <td colspan="2" class="text-center">
-        <input type="button" (click)="onLogout()" value="Logout" />
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="d-flex" *ngIf="userDetails" >
+  <div class="col-sm-12 col-md-6"><h1 class="">Welcome {{userDetails.firstName}}</h1></div>
+  <div class="col-sm-12 col-md-2 text-center  ml-auto"><input mdbBtn gradient="peach" type="button" (click)="onLogout()" value="Logout" /></div>
+
+</div>
+
+<!--<table *ngIf="userDetails" class=" table-fill">-->
+  <!--<thead>-->
+  <!--<tr>-->
+    <!--<th colspan="2" class="text-center">Dashboard</th>-->
+  <!--</tr>-->
+  <!--</thead>-->
+  <!--<tbody>-->
+  <!--<tr>-->
+    <!--<td>First Name</td>-->
+    <!--<td>{{ userDetails.firstName }}</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>Last Name</td>-->
+    <!--<td>{{ userDetails.lastName }}</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+    <!--<td>E-Mail</td>-->
+    <!--<td>{{ userDetails.email }}</td>-->
+  <!--</tr>-->
+  <!--<tr>-->
+  <!--</tr>-->
+  <!--</tbody>-->
+<!--</table>-->
+
 <app-post></app-post>
+

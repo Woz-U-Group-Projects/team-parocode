@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import{ UserService } from '../../shared/user.service';
 
@@ -11,7 +11,6 @@ import{ UserService } from '../../shared/user.service';
   providers: [UserService]
 })
 export class SignInComponent implements OnInit {
-
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -33,6 +32,7 @@ export class SignInComponent implements OnInit {
   onSubmit(form : NgForm) {
     this.userService.login(form.value).subscribe(
       res => {
+        console.log(res);
         this.userService.setToken(res['token']);
         this.router.navigateByUrl('/userDashboard');
       },

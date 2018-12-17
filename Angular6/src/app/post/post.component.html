@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row posts">
   <div class="col s12">
     <div class="card">
       <div class="card-content white-text">
@@ -8,7 +8,7 @@
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="postService.selectedPost._id">
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="title" #title="ngModel" [(ngModel)]="postService.selectedPost.title" required>
+                  <input class="form-control" type="text" name="title" #title="ngModel" [(ngModel)]="postService.selectedPost.title" required>
                   <label>Blog Title:
                     <label class="red-text">*</label>
                   </label>
@@ -16,7 +16,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea type="text" form="_id" name="body" #body="ngModel" [(ngModel)]="postService.selectedPost.body" required></textarea>
+                  <textarea type="text"  name="body" #body="ngModel" [(ngModel)]="postService.selectedPost.body" required></textarea>
                   <label>Blog Post:
                     <label class="red-text">*</label>
                   </label>
@@ -29,26 +29,24 @@
             </form>
           </div>
           <div class="col s7">
-            <table class="responsive-table highlight">
-              <thead>
-                <tr>
-                  <th>Title:</th>
-                  <th>Body:</th>
-                </tr>
-              </thead>
-              <tr *ngFor="let post of postService.posts">
-                <td>{{post.title}}</td>
-                <td>{{post.body}}</td>
-                <td>
-                  <a class="action-btn" (click)="onEdit(post)">
-                    <i class="material-icons">edit</i>
+
+
+            <div class="postsContainer" *ngFor="let post of postService.posts" class="media mt-4 px-1">
+              <div class="media-body">
+                <h5 class="font-weight-bold mt-0">
+                  <h1 class="text-default">{{post.title}}
+                    <a class="action-btn" (click)="onEdit(post)">
+                    <i style="color: dodgerblue" class="material-icons">edit</i>
                   </a>
-                  <a class="action-btn" (click)="onDelete(post._id, postForm)">
-                    <i class="material-icons">delete</i>
-                  </a>
-                </td>
-              </tr>
-            </table>
+                    <a class="action-btn" (click)="onDelete(post._id, postForm)">
+                      <i style="color: dodgerblue;" class="material-icons">delete</i>
+                    </a>
+                  </h1>
+                </h5>
+                <h3 style="color: black">{{post.body}}</h3>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

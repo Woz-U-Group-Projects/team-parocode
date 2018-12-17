@@ -42,6 +42,7 @@ export class UserService {
   }
   deleteToken() {
     localStorage.removeItem('token');
+    return this.http.get(environment.apiBaseUrl + '', );
   }
   getUserPayload() {
     var token = this.getToken();

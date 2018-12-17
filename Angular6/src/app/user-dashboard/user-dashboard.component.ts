@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -26,7 +26,7 @@ export class UserDashboardComponent implements OnInit {
 
   onLogout() {
     this.userService.deleteToken();
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
 }

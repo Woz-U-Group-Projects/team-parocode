@@ -1,27 +1,29 @@
-// built-in
+ // built-in
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// components
+ // components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-// routes
+ // routes
 import { appRoutes } from './routes';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { PostComponent } from './post/post.component';
-//other
+ // other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import {MDBBootstrapModulesPro} from 'ng-uikit-pro-standard';
 import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 import { BannerComponent } from './banner/banner.component';
 import { HeaderComponent } from './header/header.component';
 import { TeamComponent } from './team/team.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { TeamComponent } from './team/team.component';
     BannerComponent,
     HeaderComponent,
     TeamComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
-import { UserService } from '../../shared/user.service'
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSubmit(form : NgForm) {
+  onSubmit(form: NgForm) {
     this.userService.postUser(form.value).subscribe(
       res => {
         this.showSuccessMessage = true;
